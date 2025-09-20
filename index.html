@@ -1,0 +1,100 @@
+
+<!-- below code to get cookie -->
+<!-- document.cookie.split(";").find(cookie => cookie.trim().startsWith('sid=')).split("!")[1] -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SQL Query Interface</title>
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <script src="main.js"></script>
+ <div class="input-container">
+        <div class="input-group">
+            <label for="sessionId">Session ID</label>
+            <input type="text" id="sessionId" placeholder="Enter session ID">
+        </div>
+        <div class="input-group">
+            <label for="orgUrl">Org URL</label>
+            <input type="text" id="orgUrl" placeholder="Enter organization URL">
+        </div>
+                            <button class="run-button" onclick="testApiCall()">Test Api</button>
+
+    </div>
+        <div class="container">
+            <header class="header">
+                <div class="header-left">
+
+                    <div class="dropdown">
+                        <label for="query-type">Query</label>
+                        <select id="query-type">
+                            <option>Select</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <label for="templates">Templates</label>
+                        <select id="templates">
+                            <option>Select</option>
+                        </select>
+                    </div>
+                    <button class="header-button">Query History</button>
+                    <button class="header-button">Clear</button>
+                    <button class="header-button">Saved Queries</button>
+                </div>
+                <div class="header-right">
+                    <input type="checkbox" id="query-label-checkbox">
+                    <label for="query-label-checkbox">Query Label</label>
+                    <input type="checkbox" id="deleted-records">
+                    <label for="deleted-records">Deleted/Archived
+                        Records?</label>
+                    <input type="checkbox" id="tooling-api">
+                    <label for="tooling-api">Tooling API?</label>
+                </div>
+            </header>
+            <div class="query-editor-container">
+                <textarea class="query-textarea"
+                    placeholder="select id from Account where Name !=null order by CreatedDate desc"></textarea>
+                <div class="query-buttons">
+                    <button class="run-button" onclick="exportQuery()">Run Export</button>
+                    <button class="export-button">Export Query</button>
+                    <button class="export-button">Query Plan</button>
+                    <button class="dropdown-button">▼</button>
+                </div>
+            </div>
+            <div class="results-container">
+                <div class="results-header">
+                    <h3>Export Result</h3>
+                    <div class="results-buttons">
+                        <button class="results-action-button">Copy
+                            (Excel)</button>
+                        <button class="results-action-button">Copy
+                            (CSV)</button>
+                        <button class="results-action-button">Copy
+                            (JSON)</button>
+                        <button class="icon-button">🗑️</button>
+                        <button class="icon-button">⬇️</button>
+                        <div class="search-box">
+                            <input type="text" placeholder="Filter Result">
+                            <button class="search-button">🔍</button>
+                        </div>
+                    </div>
+                    <div class="results-status">
+                        <span>Ready</span>
+                        <button class="stop-button">Stop</button>
+                    </div>
+                </div>
+                <div class="results-content">
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
