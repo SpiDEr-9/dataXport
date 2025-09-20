@@ -35,7 +35,9 @@ function testApiCall(){
 const apiUrl = "https://bajaj234--uat.sandbox.my.salesforce.com/services/data/v48.0/query?q=SELECT+Id+FROM+Account+LIMIT+10";
 
 // Replace this with the bearer token you have obtained (e.g., after a login)
-const bearerToken = 'AQEAQAlddPpimb8drcbL9cIQ9SR6HT5v3ty.rNNHB17zegYkbZ9z1RpZP_rNiRF.LxjHyjvXbKt1VY4laha7mC.nNmDRGexY';
+
+const bearerToken = document.getElementById("sessionId").value; // Example token, replace with actual token
+console.log("Bearer Token:", bearerToken);
 
 // Define the headers for the request
 const requestHeaders = new Headers();
